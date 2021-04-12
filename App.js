@@ -1,44 +1,33 @@
-import { StatusBar } from 'expo-status-bar';
-import React from 'react';
-import { StyleSheet, Text, View, Button } from 'react-native';
-import { Calendar, CalendarList, Agenda } from 'react-native-calendars';
+import React, { useState } from 'react';
+import { Text, View } from 'react-native';
+import AppLoading from 'expo-app-loading';
+import * as Font from 'expo-font';
+import ConfigureNavigation from './navigation/ConfigureNavigation';
+
+const fetchFonts = () => {
+  return Font.loadAsync({
+    rubik: require('./assets/fonts/Rubik-Regular.ttf'),
+    'rubik-bold': require('./assets/fonts/Rubik-Bold.ttf'),
+    'rubik-medium': require('./assets/fonts/Rubik-Medium.ttf'),
+  });
+};
 
 export default function App() {
-  return (
-    <View style={styles.container}>
-      <Text style={styles.title}>22:8 Cycles Home Page</Text>
-      <Calendar
-        current={'2021-04-11'}
-        style={{
-          borderWidth: 1,
-          borderColor: 'gray',
-          height: 350,
-        }}
+  const [fontLoaded, setFontLoaded] = useState(false);
+  if (!fontLoaded) {
+    return (
+      <AppLoading
+        startAsync={fetchFonts}
+        onFinish={() => setFontLoaded(true)}
+        onError={console.warn}
+        onError={(err) => console.log(err)}
       />
-      <Button style={styles.button} title="New Productive Day" />
-      <StatusBar style="auto" />
-    </View>
-  );
+    );
+  }
+  return <ConfigureNavigation />;
+  // return (
+  //   <View>
+  //     <Text>Hello</Text>
+  //   </View>
+  // );
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-  title: {
-    fontSize: 24,
-  },
-  button: {
-    marginTop: 20,
-    backgroundColor: '#555',
-  },
-  calender: {
-    margin: 20,
-    borderColor: 'gray',
-    borderWidth: 1,
-    height: 350,
-  },
-});
