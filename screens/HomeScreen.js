@@ -5,7 +5,13 @@ const HomeScreen = (props) => {
   return (
     <View style={styles.screen}>
       <Text style={styles.title}>Welcome to 22:8 App</Text>
-      <Calendar />
+      <Calendar
+        onDayPress={(day) => {
+          props.navigation.navigate('ProductiveList', {
+            dateList: day,
+          });
+        }}
+      />
       <Button
         style={styles.button}
         title="New Productive Day"
@@ -15,6 +21,10 @@ const HomeScreen = (props) => {
       />
     </View>
   );
+};
+
+HomeScreen.navigationOptions = {
+  headerTitle: 'Home',
 };
 
 const styles = StyleSheet.create({

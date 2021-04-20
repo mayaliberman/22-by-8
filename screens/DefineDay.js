@@ -1,30 +1,41 @@
 import React, { useState } from 'react';
-import { View, Text, StyleSheet } from 'react-native';
-// import { Picker } from '@react-native-picker/picker';
-// import RNPickerSelect from 'react-native-picker-select';
+import { View, Text, StyleSheet, Button } from 'react-native';
+import { Picker } from '@react-native-community/picker';
+
 const DefineDay = (props) => {
-  const [selectedNumOfCycles, setNumOfCycles] = useState();
+  const [selectedNumOfCycles, setNumOfCycles] = useState('');
+
   return (
     <View style={styles.screen}>
-      <Text>Define Day Screen</Text>
-      {/* <Picker
-        selectedValue={selectedNumOfCycles}
-        onValueChange={(itemValue, itemIndex) => setNumOfCycles(itemValue)}
-      >
-        <Picker.Item label="1" value="1" />
-        <Picker.Item label="2" value="2" />
-      </Picker> */}
-      {/* <RNPickerSelect
-        placeholder="Choose number of cycles"
-        onValueChange={(value) => console.log(value)}
-        items={[
-          { label: 'Football', value: 'football' },
-          { label: 'Baseball', value: 'baseball' },
-          { label: 'Hockey', value: 'hockey' },
-        ]}
-      /> */}
+      <Text>Define Your Productive Day</Text>
+
+      <View>
+        <Text>Choose Number of Cycles</Text>
+      </View>
+      <View style={styles.picker}>
+        <Picker
+          selectedValue={selectedNumOfCycles}
+          onValueChange={(currentNum) => setNumOfCycles(currentNum)}
+        >
+          <Picker.Item label="1" value="1" />
+          <Picker.Item label="2" value="2" />
+          <Picker.Item label="3" value="3" />
+        </Picker>
+      </View>
+      <View>
+        <Button
+          title="Continue"
+          onPress={() => {
+            props.navigation.navigate({ routeName: 'ListUpdate' });
+          }}
+        />
+      </View>
     </View>
   );
+};
+
+DefineDay.navigationOptions = {
+  headerTitle: 'Define a Day',
 };
 
 const styles = StyleSheet.create({
@@ -32,6 +43,11 @@ const styles = StyleSheet.create({
     flex: 1,
     justifyContent: 'center',
     alignItems: 'center',
+  },
+  picker: {
+    width: '40%',
+    padding: 20,
+    marginTop: 20,
   },
 });
 export default DefineDay;
