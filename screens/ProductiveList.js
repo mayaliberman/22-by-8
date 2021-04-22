@@ -4,36 +4,30 @@ import CycleItem from '../components/CycleItem';
 const mockCycles = require('../data/mock_cycles.json');
 const ProductiveList = (props) => {
   const { dateList } = props.navigation.state.params;
-
-  const renderCycleItem = (itemData) => {
-    let items = [];
-
-    if (itemData.item.cycles.length > 0) {
-      items = itemData.item.cycles.map((cycle) => {
-        return (
-          <CycleItem
-            title={cycle.cycle_title}
-            cycleNum={cycle.cycle_num}
-            cycleDate={itemData.item.date}
-            onSelectCycle={() => {}}
-          />
-        );
-      });
-    }
-    return <View>{items}</View>;
-  };
-
-  const displayCycles = mockCycles.filter(
+  const displayCycles = JSON.parse(mockCycles).filter(
     (cycle) => cycle.date === dateList.dateString
   );
-  if (displayCycles.length > 0) {
+  const filteredCycle = displayCycles[0]?.cycles ? displayCycles[0].cycles : [];
+
+  const renderCycleItem = (itemData) => {
     return (
-      <View>
+      <CycleItem
+        title={itemData.item.cycle_title}
+        cycleNum={itemData.item.cycle_num}
+        onSelectCycle={() => {}}
+        completed={itemData.item.cycle_completed}
+      />
+    );
+  };
+
+  if (filteredCycle.length > 0) {
+    return (
+      <View style={styles.listContainer}>
         <FlatList
-          data={displayCycles}
-          keyExtractor={(items, index) => items.id}
+          data={filteredCycle}
           renderItem={renderCycleItem}
           style={{ width: '100%' }}
+          keyExtractor={(item) => item.id}
         />
       </View>
     );
@@ -46,9 +40,37 @@ const ProductiveList = (props) => {
   }
 };
 
+ProductiveList.navigationOptions = (navigationData) => {
+  const { dateList } = navigationData.navigation.state.params;
+  var months = [
+    'January',
+    'February',
+    'March',
+    'April',
+    'May',
+    'June',
+    'July',
+    'August',
+    'September',
+    'October',
+    'November',
+    'December',
+  ];
+
+  var selectedMonthName = months[[dateList.month - 1]];
+  return {
+    headerTitle: `${selectedMonthName} ${dateList.day}, ${dateList.year}`,
+  };
+};
+
 const styles = StyleSheet.create({
   screen: {
     flex: 1,
+    justifyContent: 'center',
+    alignItems: 'center',
+  },
+  listContainer: {
+    marginTop: 20,
     justifyContent: 'center',
     alignItems: 'center',
   },

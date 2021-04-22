@@ -3,6 +3,8 @@
     "id": 1,
     "date": "2021-04-20",
     "userId": 1110,
+    "completed": true,
+    "numOfCyclesConfigured": 8,
     "cycles": [
       {
         "id": 1,
@@ -15,7 +17,8 @@
         "end_time": "2:00 PM",
         "satisfaction": 2,
         "productivity": 1,
-        "feedback": "Open bite of left hand, initial encounter"
+        "feedback": "Open bite of left hand, initial encounter",
+        "cycle_completed": true
       },
       {
         "id": 2,
@@ -28,7 +31,8 @@
         "end_time": "10:01 AM",
         "satisfaction": 2,
         "productivity": 4,
-        "feedback": "Disorders of social functioning with onset specific to childhood and adolescence"
+        "feedback": "Disorders of social functioning with onset specific to childhood and adolescence",
+        "cycle_completed": true
       },
       {
         "id": 3,
@@ -41,7 +45,8 @@
         "end_time": "5:26 PM",
         "satisfaction": 3,
         "productivity": 3,
-        "feedback": "Disseminated histoplasmosis capsulati"
+        "feedback": "Disseminated histoplasmosis capsulati",
+        "cycle_completed": true
       },
       {
         "id": 4,
@@ -54,7 +59,8 @@
         "end_time": "11:37 PM",
         "satisfaction": 2,
         "productivity": 4,
-        "feedback": "Unspecified subluxation of unspecified shoulder joint, initial encounter"
+        "feedback": "Unspecified subluxation of unspecified shoulder joint, initial encounter",
+        "cycle_completed": true
       },
       {
         "id": 5,
@@ -67,7 +73,8 @@
         "end_time": "5:03 PM",
         "satisfaction": 5,
         "productivity": 5,
-        "feedback": "Other physeal fracture of lower end of unspecified fibula, sequela"
+        "feedback": "Other physeal fracture of lower end of unspecified fibula, sequela",
+        "cycle_completed": true
       },
       {
         "id": 6,
@@ -80,7 +87,9 @@
         "end_time": "3:35 AM",
         "satisfaction": 2,
         "productivity": 4,
-        "feedback": "Unspecified occupant of pick-up truck or van injured in noncollision transport accident in traffic accident"
+        "feedback": "Unspecified occupant of pick-up truck or van injured in noncollision transport accident in, 
+         traffic accident", 
+         "cycle_completed": true
       },
       {
         "id": 7,
@@ -93,7 +102,8 @@
         "end_time": "3:15 AM",
         "satisfaction": 4,
         "productivity": 3,
-        "feedback": "Atheroembolism of other sites"
+        "feedback": "Atheroembolism of other sites",
+        "cycle_completed": true
       },
       {
         "id": 8,
@@ -106,7 +116,8 @@
         "end_time": "3:28 AM",
         "satisfaction": 2,
         "productivity": 3,
-        "feedback": "Dislocation of radiocarpal joint of unspecified wrist, initial encounter"
+        "feedback": "Dislocation of radiocarpal joint of unspecified wrist, initial encounter",
+        "cycle_completed": true
       }
     ]
   },
@@ -114,6 +125,8 @@
     "id": 2,
     "date": "2021-04-21",
     "userId": 1110,
+    "completed": false,
+    "numOfCyclesConfigured": 8,
     "cycles": [
       {
         "id": 9,
@@ -126,7 +139,8 @@
         "end_time": "2:00 PM",
         "satisfaction": 2,
         "productivity": 1,
-        "feedback": "Open bite of left hand, initial encounter"
+        "feedback": "Open bite of left hand, initial encounter",
+        "cycle_completed": true
       },
       {
         "id": 10,
@@ -139,7 +153,8 @@
         "end_time": "10:01 AM",
         "satisfaction": 2,
         "productivity": 4,
-        "feedback": "Disorders of social functioning with onset specific to childhood and adolescence"
+        "feedback": "Disorders of social functioning with onset specific to childhood and adolescence",
+        "cycle_completed": true
       },
       {
         "id": 11,
@@ -152,7 +167,8 @@
         "end_time": "5:26 PM",
         "satisfaction": 3,
         "productivity": 3,
-        "feedback": "Disseminated histoplasmosis capsulati"
+        "feedback": "Disseminated histoplasmosis capsulati",
+        "cycle_completed": true
       },
       {
         "id": 12,
@@ -165,7 +181,8 @@
         "end_time": "11:37 PM",
         "satisfaction": 2,
         "productivity": 4,
-        "feedback": "Unspecified subluxation of unspecified shoulder joint, initial encounter"
+        "feedback": "Unspecified subluxation of unspecified shoulder joint, initial encounter",
+        "cycle_completed": true
       },
       {
         "id": 13,
@@ -178,7 +195,8 @@
         "end_time": "5:03 PM",
         "satisfaction": 5,
         "productivity": 5,
-        "feedback": "Other physeal fracture of lower end of unspecified fibula, sequela"
+        "feedback": "Other physeal fracture of lower end of unspecified fibula, sequela",
+        "cycle_completed": true
       },
       {
         "id": 14,
@@ -191,7 +209,8 @@
         "end_time": "3:35 AM",
         "satisfaction": 2,
         "productivity": 4,
-        "feedback": "Unspecified occupant of pick-up truck or van injured in noncollision transport accident in traffic accident"
+        "feedback": "Unspecified occupant of pick-up truck or van injured in noncollision transport accident in traffic accident",
+        "cycle_completed": false
       },
       {
         "id": 15,
@@ -204,20 +223,8 @@
         "end_time": "3:15 AM",
         "satisfaction": 4,
         "productivity": 3,
-        "feedback": "Atheroembolism of other sites"
-      },
-      {
-        "id": 16,
-        "cycle_num": 8,
-        "cycle_title": "Nondisp fx of lateral condyle of unspecified tibia, sequela",
-        "cycle_desc": "Nondisplaced fracture of lateral condyle of unspecified tibia, sequela",
-        "break_desc": "Dislocation of radiocarpal joint of unsp wrist, init encntr",
-        "cycle_length": 22,
-        "start_time": "9:38 AM",
-        "end_time": "3:28 AM",
-        "satisfaction": 2,
-        "productivity": 3,
-        "feedback": "Dislocation of radiocarpal joint of unspecified wrist, initial encounter"
+        "feedback": "Atheroembolism of other sites",
+        "cycle_completed": false
       }
     ]
   }
