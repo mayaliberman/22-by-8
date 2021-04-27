@@ -8,6 +8,7 @@ import HomeScreen from '../screens/HomeScreen';
 import Colors from '../constants/Colors';
 import ProductiveListUpdate from '../screens/ProductiveListUpdate';
 import ProductiveList from '../screens/ProductiveList';
+import SingleCycle from '../screens/SingleCycle';
 const ConfigureNavigation = createStackNavigator(
   {
     Login: Login,
@@ -16,6 +17,7 @@ const ConfigureNavigation = createStackNavigator(
     DefineCycle: DefineCycle,
     ListUpdate: ProductiveListUpdate,
     ProductiveList: ProductiveList,
+    SingleCycle: SingleCycle,
   },
   {
     // mode: 'modal',

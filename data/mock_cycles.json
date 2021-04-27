@@ -87,9 +87,8 @@
         "end_time": "3:35 AM",
         "satisfaction": 2,
         "productivity": 4,
-        "feedback": "Unspecified occupant of pick-up truck or van injured in noncollision transport accident in, 
-         traffic accident", 
-         "cycle_completed": true
+        "feedback": "Unspecified occupant of pick-up truck or van injured in noncollision transport accident in",
+        "cycle_completed": true
       },
       {
         "id": 7,

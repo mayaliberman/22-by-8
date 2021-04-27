@@ -4,18 +4,30 @@ import CycleItem from '../components/CycleItem';
 const mockCycles = require('../data/mock_cycles.json');
 const ProductiveList = (props) => {
   const { dateList } = props.navigation.state.params;
-  const displayCycles = JSON.parse(mockCycles).filter(
+
+  const displayCycles = mockCycles.filter(
     (cycle) => cycle.date === dateList.dateString
   );
   const filteredCycle = displayCycles[0]?.cycles ? displayCycles[0].cycles : [];
 
   const renderCycleItem = (itemData) => {
+    const cycleNum = itemData.item.cycle_num.toString();
+    const cycleIdNum = itemData.item.id.toString();
+
     return (
       <CycleItem
         title={itemData.item.cycle_title}
         cycleNum={itemData.item.cycle_num}
-        onSelectCycle={() => {}}
         completed={itemData.item.cycle_completed}
+        onSelectCycle={() =>
+          props.navigation.navigate({
+            routeName: 'SingleCycle',
+            params: {
+              cycleIdStr: cycleIdNum,
+              cycleNumStr: cycleNum,
+            },
+          })
+        }
       />
     );
   };
@@ -27,13 +39,13 @@ const ProductiveList = (props) => {
           data={filteredCycle}
           renderItem={renderCycleItem}
           style={{ width: '100%' }}
-          keyExtractor={(item) => item.id}
+          keyExtractor={(item) => item.id.toString()}
         />
       </View>
     );
   } else {
     return (
-      <View>
+      <View style={styles.noItemsContainer}>
         <Text>No items</Text>
       </View>
     );
@@ -73,6 +85,12 @@ const styles = StyleSheet.create({
     marginTop: 20,
     justifyContent: 'center',
     alignItems: 'center',
+  },
+  noItemsContainer: {
+    flex: 1,
+    justifyContent: 'center',
+    alignItems: 'center',
+    alignContent: 'center',
   },
 });
 export default ProductiveList;
