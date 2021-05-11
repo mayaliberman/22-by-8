@@ -24,7 +24,7 @@ const ProductiveListUpdate = (props) => {
         />
         <TouchableOpacity
           style={styles.submitButton}
-          // onPress={() => this.login(this.state.email, this.state.password)}
+          onPress={() => props.navigation.navigate({ routeName: 'Count' })}
         >
           <Text style={styles.submitButtonText}> Submit </Text>
         </TouchableOpacity>
