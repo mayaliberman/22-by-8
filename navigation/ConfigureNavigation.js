@@ -9,7 +9,7 @@ import Colors from '../constants/Colors';
 import ProductiveListUpdate from '../screens/ProductiveListUpdate';
 import ProductiveList from '../screens/ProductiveList';
 import SingleCycle from '../screens/SingleCycle';
-import Countdown from '../screens/Countdown';
+import CountdownScreen from '../screens/CountdownScreen';
 const ConfigureNavigation = createStackNavigator(
   {
     Login: Login,
@@ -19,7 +19,7 @@ const ConfigureNavigation = createStackNavigator(
     ListUpdate: ProductiveListUpdate,
     ProductiveList: ProductiveList,
     SingleCycle: SingleCycle,
-    Count: Countdown,
+    Count: CountdownScreen,
   },
   {
     // mode: 'modal',
